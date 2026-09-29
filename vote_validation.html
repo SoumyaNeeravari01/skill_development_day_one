@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote Validation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 380px;
+            padding: 35px;
+
+            background: rgba(255, 255, 255, 0.88);
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #172554;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+            margin: 8px 0;
+
+            border: 1px solid #bbb;
+            border-radius: 8px;
+
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border: 2px solid #2563eb;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 15px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #2563eb;
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 12px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+            display: none;
+        }
+
+        .success {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+    <style>
+body {
+     
+    background-image: url("https://assets.thehansindia.com/h-upload/2023/10/12/1388449-ts-elections.webp");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vote Validation</h1>
+
+        <p>Check your voting eligibility</p>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+        >
+
+        <input
+            type="number"
+            id="age"
+            placeholder="Enter your age"
+        >
+
+        <select id="country">
+            <option value="">Select your country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+        </select>
+
+        <button onclick="checkEligibility()">
+            Check Eligibility
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+
+    <script>
+
+        function checkEligibility() {
+
+            let name = document.getElementById("name").value.trim();
+            let age = Number(document.getElementById("age").value);
+            let country = document.getElementById("country").value;
+
+            let result = document.getElementById("result");
+
+            result.style.display = "block";
+
+            if (name === "") {
+
+                result.innerHTML = "Please enter your name.";
+                result.className = "error";
+
+            }
+
+            else if (age <= 0) {
+
+                result.innerHTML = "Please enter a valid age.";
+                result.className = "error";
+
+            }
+
+            else if (country === "") {
+
+                result.innerHTML = "Please select your country.";
+                result.className = "error";
+
+            }
+
+            else if (country !== "India") {
+
+                result.innerHTML =
+                    "You do not belong to India.";
+
+                result.className = "error";
+
+            }
+
+            else if (age < 18) {
+
+                result.innerHTML =
+                    "You are below 18 and are not eligible to vote.";
+
+                result.className = "error";
+
+            }
+
+            else {
+
+                result.innerHTML =
+                    "You are eligible to vote.";
+
+                result.className = "success";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
