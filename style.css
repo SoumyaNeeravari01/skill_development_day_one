@@ -1,0 +1,99 @@
+body{
+    background-color: rgb(219, 238, 151);
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
+/* type selectors
+element selector
+id selector - #
+class selector - .
+universal selector - * */
+
+#panda{
+    height: 400px;
+    width: 400px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 10px solid red;
+}
+
+#div1{
+    height: 50px;
+    width: 50px;
+    padding: 60px;
+    margin: 10px;
+    background-color: rgb(65, 2, 2);
+    border-radius:50%;
+    border: 2px solid black;
+
+}
+#div2{
+    height: 50px;
+    width: 50px;
+    padding: 60px;
+    margin: 10px;
+    background-color: rgb(77, 77, 2);
+    border-radius: 50%;
+     border: 2px solid black;
+
+}
+
+#div3{
+    height: 50px;
+    width: 50px;
+    padding: 60px;
+    margin: 10px;
+    background-color: rgb(1, 26, 1);
+    border-radius: 50%;
+    border: 2px solid black;
+
+}
+/* pseudo-code */
+
+#div1:hover{
+    background-color: red;
+    box-shadow: 0 0 25px red;
+}
+#div2:hover{
+    background-color: yellow;
+    box-shadow: 0 0 25px yellow;
+}
+
+#div3:hover{
+    background-color: green;
+    box-shadow: 0 0 25px green;
+}
+
+form{
+    width: 400px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    font-family:sans-serif ;
+    gap:10px;
+    background-color: rgb(157, 233, 243);
+    backdrop-filter:blur(10px);
+}
+
+input{
+    width: 80%;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: blanchedalmond;
+    transition: 0.3s ease;
+
+}
+
+button{
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
